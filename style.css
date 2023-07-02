@@ -1,0 +1,21 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+    padding-top: 150px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    margin: 10px;
+    padding: 5px;
+  }
+  
+  #loginButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+  

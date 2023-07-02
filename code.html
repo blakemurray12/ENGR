@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sewer Analysis</title>
+  <link rel="stylesheet" type="text/css" href="code_style.css">
+</head>
+<body>
+  <h1>Sewer Analysis</h1>
+  
+  <table id="runTable" style="width:75%">
+    <tr>
+      <th>Runs</th>;
+      <th>From MH</th>
+      <th>To MH</th>    
+      <th>Pipe Diameter (in)</th>
+      <th>Manning's n value</th>
+      <th>Pipe Slope (ft/ft)</th>
+      <th>User Calculated Flow (gpm)</th>
+      <th>Max Flow Rate (gpm)</th>
+      <th>80% Full Flow (gpm)</th>
+      <th>Remaining Capacity (gpm)</th>
+      <th>Percent Full (%)</th>
+
+    </tr>
+    <tr>
+      <td>1</td>
+      <td><input type="text" id="fromMH" style="width: 75px"></td>
+      <td><input type="text" id="toMH" style="width: 75px"></td>   
+      <td><input type="text" id="d1"  style="width: 75px"></td>
+      <td><input type="text" id="n1"  style="width: 75px"></td>
+      <td><input type="text" id="s1"  style="width: 75px"></td>
+      <td><input type="text" id="uf1"  style="width: 75px"></td>
+      <td><span id="result1"></span></td>
+      <td><span id="eightyresult1"></span></td>
+      <td><span id="remcap1"></span></td>
+      <td><span id="pfresult1"></span></td>
+
+    </tr>
+  </table>
+  
+  <button id="addRunButton">Add Run</button>
+  <button id="calculateButton">Calculate</button>
+
+  <img src="C:\Users\Blake\OneDrive\Desktop\CHAT\Man_Partial\Manning N Values.png" width="300" height="500">;
+  <img src="C:\Users\Blake\OneDrive\Desktop\CHAT\Man_Partial\Smallerthanhalf.png" width="500" height="300">;
+  <img src="C:\Users\Blake\OneDrive\Desktop\CHAT\Man_Partial\Largerthanhalf.png" width="500" height="300">;
+
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="code_script.js"></script>
+</body>
+</html>

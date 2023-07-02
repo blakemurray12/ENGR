@@ -1,0 +1,27 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+}
+
+#runTable input {
+  width: 75%;
+}
