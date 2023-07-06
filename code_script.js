@@ -62,11 +62,19 @@ $(document).ready(function() {
             hydRadRaise.push(Math.pow(hydRad[i], 0.67));
             velocity.push((1.49 / n) * hydRadRaise[i] * sloRaise);
             Qvalues.push(Math.round(448.831 * velocity[i] * area[i] * 100) / 100);
-            flowRateDict[depthOfPipe[i]] = Qvalues[i];
           }
 
           var QMax = Math.max.apply(Math, Qvalues);
-          var EightyFull = Math.round((0.8 * QMax) * 100) / 100;
+          
+          // Calculate 80% Flow
+          radeight = Math.round((Math.PI + 2 * Math.asin((2 * 0.8*d) / d - 1)) * 100) / 100;
+          areaEight=(((radeight - Math.sin(radeight)) * ((d / 12) ** 2) / 8));
+          perimEight=((radeight * (d / 12)) / 2);
+          hydRadEight=(areaEight / perimEight);
+          hydRadRaiseEight=(Math.pow(hydRadEight, 0.6666667));
+          vEight=((1.49 / n) * hydRadRaiseEight * sloRaise);
+          QEight=(Math.round(448.831 * vEight * areaEight * 100) / 100);
+
           var remainingCap = Math.round((QMax - uf) * 100) / 100;
 
           var depthOfPipeForUserFlow = null;
@@ -84,22 +92,15 @@ $(document).ready(function() {
             }
           }
 
-          if (depthOfPipeForUserFlow !== null) {
-            console.log('Depth of Pipe for User Flow:', depthOfPipeForUserFlow);
-          } else {
-            console.log('No Depth of Pipe found for User Flow:', uf);
-          }
-
           $('#result' + z).text(QMax);
-          $('#eightyresult' + z).text(EightyFull);
+          $('#eightyresult' + z).text(QEight);
           $('#remcap' + z).text(remainingCap);
           $('#pfresult' + z).text(pfvalue);
         } else {
           alert('Invalid input values for n, s, or d');
-          
         }
       }
     }
   });
-});
 
+});
